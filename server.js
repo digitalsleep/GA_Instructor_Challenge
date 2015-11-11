@@ -21,7 +21,7 @@ app.post('/favorites', function(req, res) {
     res.send("Error");
     return;
   }
-  
+
   var data = JSON.parse(fs.readFileSync('./data.json'));
   data.push(req.body);
   fs.writeFile('./data.json', JSON.stringify(data));
@@ -29,6 +29,6 @@ app.post('/favorites', function(req, res) {
   res.send(data);
 });
 
-app.listen(3000, function(){
-  console.log("Listening on port 3000");
+app.listen(8080, function(){
+  console.log("Listening on port 8080");
 });
