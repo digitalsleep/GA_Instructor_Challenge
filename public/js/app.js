@@ -1,9 +1,9 @@
 // API Endpoint
-var baseUrl = 'http://www.omdbapi.com/';
+var baseUrl = 'https://www.omdbapi.com/';
 
 // ------------------------------------------------------------------------------------------------------
 // API Functions
-// 
+//
 // API functions that will make asynchronous calls to the node server and the OMDB
 // ------------------------------------------------------------------------------------------------------
 
@@ -77,7 +77,7 @@ var api = {
 
 // ------------------------------------------------------------------------------------------------------
 // Actions
-// 
+//
 // Actions that are called from within the page
 // ------------------------------------------------------------------------------------------------------
 
@@ -163,10 +163,10 @@ var searchMovies = function() {
 	document.querySelector("#results-search").classList.remove('hidden');
 
 	api.search(searchText, function(response) {
-		
+
 		document.querySelector("#results-search").innerHTML = '';
 		document.querySelector("#button-search").removeAttribute("disabled");
-		
+
 		if(response.Response && response.Response == 'False') {
 			document.querySelector("#results-search").innerHTML = '<div style="padding: 12px; border: 1px solid #ff9999; border-radius: 4px;" class="bg-danger text-center">' + response.Error + '</div>';
 		} else {
@@ -198,7 +198,7 @@ var showFavorites = function() {
 	api.favorites(function(response) {
 		document.querySelector("#results-search").innerHTML = '';
 		document.querySelector("#button-search").removeAttribute("disabled");
-		
+
 		if(response.length < 1) {
 			document.querySelector("#results-search").innerHTML = '<div style="padding: 12px; border: 1px solid #ff9999; border-radius: 4px;" class="bg-danger text-center">You don\'t have any favorites yet.</div>';
 		} else {
@@ -230,7 +230,7 @@ var favoriteMovie = function() {
 
 // ------------------------------------------------------------------------------------------------------
 // Listeners
-// 
+//
 // Add listeners to dom elements on the page
 // ------------------------------------------------------------------------------------------------------
 
